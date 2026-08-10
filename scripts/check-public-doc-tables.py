@@ -485,7 +485,12 @@ STATUS_RATCHET = {
     # (works on the 35B gate model, spec-on output token-identical to spec-off,
     # 1.15x warm against upstream's 1.41x). Re-pinned byte-tight below after the
     # merge, so the reduction cannot become untracked growth headroom.
-    "chars": 243570,
+    # 2026-08-10 (LoRA W2, issue #278): the LoRA row now covers W1+W2 in fewer
+    # bytes than it used to spend on W1 alone — the W1 component list collapsed
+    # to the two names that matter and the W2 additions replaced the "named
+    # W2-W7" enumeration. Net -62, re-pinned byte-tight so the reduction cannot
+    # become untracked growth headroom.
+    "chars": 243508,
     "h2_sections": 11,
     "long_paragraphs": 82,
     "oversized_cells": 44,
